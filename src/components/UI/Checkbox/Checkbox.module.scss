@@ -1,0 +1,73 @@
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.checkbox {
+  @include flex(fs);
+
+  position: relative;
+
+  &.disabled {
+    &:hover {
+      @media (pointer: fine) {
+        cursor: default;
+      }
+    }
+
+    .square {
+      border-color: $forms-disabled-placeholder-color;
+
+      i {
+        color: $forms-disabled-value-color;
+      }
+    }
+  }
+
+  &:hover {
+    @media (pointer: fine) {
+      cursor: pointer;
+    }
+  }
+
+  .square {
+    position: relative;
+
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+
+    transition: all .2s;
+
+    border: 1px solid $forms-border-color;
+    border-radius: 2px;
+
+    &.errorActive {
+      border-color: $error;
+      box-shadow: 0 0 3px 2px transparentize($error, .6);
+    }
+
+    &.active {
+      i {
+        transform: scale(1);
+      }
+    }
+
+    i {
+      position: relative;
+      left: 1px;
+
+      font-size: 15px;
+
+      transition: color .2s;
+      transform: scale(0);
+
+      color: $brand-color;
+    }
+  }
+
+  .label {
+    user-select: none;
+    transition: opacity .2s;
+
+    color: $font-color-dark;
+  }
+}

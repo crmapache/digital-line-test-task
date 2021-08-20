@@ -1,0 +1,36 @@
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.section {
+  @include elevation(3);
+  @include width($lg, 0, $layout-default-margin);
+
+  padding: 20px;
+
+  transition: background-color .2s;
+
+  border-radius: 4px;
+
+  &:last-child {
+    margin-bottom: $layout-default-margin;
+  }
+
+  &.stretched {
+    width: calc(100% + #{$layout-default-margin * 2});
+    max-width: calc(100% + #{$layout-default-margin * 2});
+    margin-left: -$layout-default-margin;
+
+    border-radius: 0;
+  }
+
+  &.colorScheme {
+    &Default {
+      background-color: $white-color;
+    }
+
+    &Dark {
+      color: $font-color-light;
+      background-color: $dark-background-color;
+    }
+  }
+}

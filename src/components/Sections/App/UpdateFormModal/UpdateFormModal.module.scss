@@ -1,0 +1,22 @@
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.updateFormModal {
+  .header {
+    @include flex(sb);
+
+    height: 60px;
+    padding: 0 0 0 15px;
+
+    color: #ffffff;
+    background-color: $brand-color;
+
+    .title {
+      font-size: 16px;
+    }
+  }
+
+  .body {
+    padding: 20px;
+  }
+}

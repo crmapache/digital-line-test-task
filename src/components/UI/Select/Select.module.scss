@@ -1,0 +1,175 @@
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.select {
+  position: relative;
+
+  &.disabled {
+    .head {
+      border: 1px solid $forms-border-color;
+      background-color: $forms-disabled-background-color;
+
+      @media (pointer: fine) {
+        &:hover {
+          cursor: default;
+        }
+      }
+
+      .valueWrap {
+        .value {
+          color: $forms-disabled-value-color;
+
+          .placeholder {
+            color: $forms-disabled-placeholder-color;
+          }
+        }
+      }
+
+      .arrowWrap {
+        i {
+          color: $forms-disabled-placeholder-color;
+        }
+      }
+    }
+  }
+
+  &.errorActive {
+    .head {
+      border-color: $error;
+      box-shadow: 0 0 3px 2px transparentize($error, .6);
+    }
+  }
+
+  .head {
+    @include flex(fe, c);
+
+    position: relative;
+
+    height: 41.33px;
+
+    transition: border-color .2s, box-shadow .2s, background-color .2s;
+
+    border: 1px solid $forms-border-color;
+    border-radius: 4px;
+    border-radius: 4px;
+    outline: none !important;
+    background-color: #ffffff;
+
+    @media (pointer: fine) {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .valueWrap {
+      @include flex(fs, c);
+
+      position: absolute;
+      top: 0;
+      right: 41.33px;
+      bottom: 0;
+      left: 0;
+
+      padding-left: 15px;
+
+      font-size: 16px;
+
+      user-select: none;
+      transition: color .2s;
+
+      .value {
+        @include elipsis();
+
+        transition: color .2s;
+
+        color: $forms-value-color;
+
+        .placeholder {
+          transition: color .2s;
+
+          color: $forms-placeholder-color;
+        }
+      }
+    }
+
+    .arrowWrap {
+      @include flex();
+
+      position: relative;
+
+      width: 41.33px;
+      height: 41.33px;
+
+      i {
+        position: absolute;
+        top: 11.5px;
+        left: 11.5px;
+
+        font-size: 22px;
+
+        transition: color .2s;
+        transition: color .2s;
+
+        color: $forms-placeholder-color;
+
+        &:first-child {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.options {
+  @include elevation(2);
+  @include thinScrollbar(true);
+
+  position: fixed;
+  z-index: -1;
+
+  overflow: auto;
+
+  max-height: 183px;
+  padding: 5px;
+
+  transform-origin: 50% 50%;
+
+  opacity: 0;
+  border-radius: 4px;
+  background-color: #ffffff;
+
+  .option {
+    margin-bottom: 5px;
+    padding: 10px 15px;
+
+    transition: color .2s, background-color .2s;
+
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .05);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      @media (pointer: fine) {
+        cursor: pointer;
+
+        background-color: rgba(0, 0, 0, .1);
+      }
+    }
+
+    &:active {
+      @media (pointer: fine) {
+        cursor: pointer;
+
+        background-color: rgba(0, 0, 0, .13);
+      }
+    }
+
+    &.active {
+      color: #ffffff;
+      background-color: $brand-color;
+    }
+  }
+}

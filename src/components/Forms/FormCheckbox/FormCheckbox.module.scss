@@ -1,0 +1,9 @@
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.formCheckbox {
+  position: relative;
+
+  width: 100%;
+  padding-bottom: 20px;
+}

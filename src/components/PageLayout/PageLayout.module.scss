@@ -1,0 +1,10 @@
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.layout {
+  display: grid;
+
+  min-height: 100vh;
+
+  grid-template-rows: auto 1fr auto;
+}

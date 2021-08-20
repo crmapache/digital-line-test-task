@@ -1,0 +1,52 @@
+// Colors
+$brand-color: #9c27b0;
+$brand-color-hover: darken($brand-color, 5%);
+$brand-color-active: darken($brand-color, 10%);
+$secondary-color: #a6a6a6;
+$white-color: #ffffff;
+$background-color: #e2e2e2;
+$dark-background-color: #0d1117;
+$light-disabled-bg-color: #f1f1f1;
+$light-disabled-font-color: #c9c6c6;
+$dark-disabled-bg-color: #2d2d2d;
+$dark-disabled-font-color: #5c5c5c;
+$font-color-dark: #232323;
+$font-color-light: #c9d1d9;
+$white-hover-color: rgba(0, 0, 0, .05);
+$white-active-color: rgba(0, 0, 0, .08);
+$scrollbar-thumb-color: #c1c1c1;
+$scrollbar-thumb-hover-color: #a8a8a8;
+$scrollbar-thumb-active-color: #787878;
+$error: #f44336;
+// =========================================
+$forms-value-color: $font-color-dark;
+$forms-border-color: #cccccc;
+$forms-placeholder-color: #9c9c9c;
+$forms-disabled-background-color: #ececec;
+$forms-disabled-value-color: #9c9c9c;
+$forms-disabled-placeholder-color: #c7c7c7;
+
+// Breakpoints
+$lg: 1200px;
+$md: 992px;
+$sm: 768px;
+$xs: 480px;
+$xxs: 320px;
+$ce: 0;
+
+// Maps
+$breakpoints: (
+  'ce': $ce,
+  'xxs': $xxs,
+  'xs': $xs,
+  'sm': $sm,
+  'md': $md,
+  'lg': $lg,
+);
+
+// Sizes
+$layout-default-margin: 20px;
+
+// Other
+$header-desctop-height: 80px;
+$header-mobile-height: 50px;

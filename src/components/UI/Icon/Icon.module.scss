@@ -1,0 +1,37 @@
+.icon {
+  display: block;
+
+  font-size: inherit;
+
+  color: inherit;
+
+  &.size {
+    &Sm {
+      font-size: 16px;
+    }
+
+    &Md {
+      font-size: 20px;
+    }
+
+    &Lg {
+      font-size: 24px;
+    }
+  }
+
+  &.image {
+    &.size {
+      &Sm {
+        width: 30px;
+      }
+
+      &Md {
+        width: 46px;
+      }
+
+      &Lg {
+        width: 60px;
+      }
+    }
+  }
+}

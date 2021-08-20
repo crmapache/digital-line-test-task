@@ -1,0 +1,231 @@
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.button {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 0;
+
+  transition: background-color .2s;
+
+  color: $white-color;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+
+    .overlay {
+      background-color: rgba(0, 0, 0, .08);
+    }
+  }
+
+  &:active {
+    .overlay {
+      background-color: rgba(0, 0, 0, .12);
+    }
+  }
+
+  .overlay {
+    @include absolute();
+
+    z-index: 1;
+
+    transition: background-color .2s;
+
+    border-radius: inherit;
+    background-color: transparent;
+  }
+
+  .linkWrap {
+    @include absolute();
+
+    z-index: 3;
+
+    .link {
+      @include absolute();
+
+      border-bottom: none !important;
+    }
+  }
+
+  .text {
+    @include flex();
+
+    position: relative;
+    z-index: 2;
+
+    line-height: 1;
+
+    user-select: none;
+    transition: color .2s;
+
+    color: inherit;
+    background-color: transparent;
+  }
+
+  .preloaderWrap {
+    @include absolute();
+    @include flex();
+
+    z-index: 2;
+
+    color: inherit;
+    background-color: transparent;
+  }
+
+  &.size {
+    &Sm {
+      .text {
+        height: 34px;
+        padding: 0 15px;
+
+        font-size: 14px;
+      }
+
+      &.icon {
+        .text {
+          width: 34px;
+          padding: 0;
+        }
+      }
+    }
+
+    &Md {
+      .text {
+        height: 41px;
+        padding: 0 20px;
+
+        font-size: 16px;
+      }
+
+      &.icon {
+        .text {
+          width: 41px;
+          padding: 0;
+        }
+      }
+    }
+
+    &Lg {
+      .text {
+        height: 48px;
+        padding: 0 25px;
+
+        font-size: 18px;
+      }
+
+      &.icon {
+        .text {
+          width: 48px;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &.colorScheme {
+    &Brand {
+      background-color: $brand-color;
+    }
+
+    &Secondary {
+      background-color: $secondary-color;
+    }
+
+    &Transparent {
+      background-color: transparent;
+
+      &:hover {
+        cursor: pointer;
+
+        color: rgba(255, 255, 255, .8);
+
+        .overlay {
+          background-color: transparent;
+        }
+      }
+
+      &:active {
+        color: rgba(255, 255, 255, .7);
+
+        .overlay {
+          background-color: transparent;
+        }
+      }
+    }
+
+    &TransparentDark {
+      color: $brand-color;
+      background-color: transparent;
+
+      &:hover {
+        cursor: pointer;
+
+        color: transparentize($brand-color, .2);
+
+        .overlay {
+          background-color: transparent;
+        }
+      }
+
+      &:active {
+        color: transparentize($brand-color, .3);
+
+        .overlay {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  &.loading {
+    .text {
+      opacity: 0;
+    }
+
+    .linkWrap {
+      z-index: -1;
+    }
+  }
+
+  &.disabled {
+    color: $light-disabled-font-color !important;
+    background-color: $light-disabled-bg-color !important;
+
+    &:hover {
+      cursor: default;
+
+      .overlay {
+        background-color: transparent;
+      }
+    }
+
+    &:active {
+      .overlay {
+        background-color: transparent;
+      }
+    }
+
+    .linkWrap {
+      z-index: -1;
+    }
+  }
+
+  &.dark {
+    &.disabled {
+      color: $dark-disabled-font-color !important;
+      background-color: $dark-disabled-bg-color !important;
+    }
+  }
+
+  &.mobileFullWidth {
+    @media (max-width: $xs) {
+      width: 100%;
+    }
+  }
+}

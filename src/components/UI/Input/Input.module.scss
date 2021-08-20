@@ -1,0 +1,57 @@
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.input {
+  width: 100%;
+  padding: 10px 15px;
+
+  font-size: 16px;
+
+  transition: border-color .2s, box-shadow .2s, background-color .2s, color .2s;
+
+  color: $forms-value-color;
+  border: 1px solid $forms-border-color;
+  border-radius: 4px;
+  outline: none !important;
+  background-color: #ffffff;
+
+  &.disabled {
+    color: $forms-disabled-value-color;
+    background-color: $forms-disabled-background-color;
+
+    &::placeholder {
+      padding-left: 3px;
+
+      color: $forms-disabled-placeholder-color;
+    }
+  }
+
+  &.errorActive {
+    border-color: $error;
+    box-shadow: 0 0 3px 2px transparentize($error, .6);
+
+    &:focus {
+      border-color: $error;
+      box-shadow: 0 0 3px 2px transparentize($error, .6);
+    }
+  }
+
+  &::placeholder {
+    padding-left: 3px;
+
+    transition: color .2s;
+
+    color: $forms-placeholder-color;
+  }
+
+  &:focus {
+    border-color: $brand-color;
+    box-shadow: 0 0 3px 2px transparentize($brand-color, .6);
+  }
+
+  &.textarea {
+    min-height: 100px;
+
+    resize: vertical;
+  }
+}

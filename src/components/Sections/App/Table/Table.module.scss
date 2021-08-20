@@ -1,0 +1,74 @@
+@use 'sass:math';
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.table {
+  overflow: hidden;
+
+  border-radius: 4px;
+
+  .record {
+    @include flex();
+
+    &:last-child {
+      .cell {
+        &:first-child {
+          border-bottom-left-radius: 4px;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 4px;
+        }
+      }
+    }
+
+    .cell {
+      @include elipsis();
+
+      width: math.div(100%, 6);
+      height: 40px;
+      padding: 0 15px;
+
+      font-size: 16px;
+      line-height: 40px;
+
+      border-right: 1px solid $forms-border-color;
+      border-bottom: 1px solid $forms-border-color;
+
+      &:first-child {
+        border-left: 1px solid $forms-border-color;
+      }
+
+      &.double {
+        @include flex(fe, c);
+
+        width: math.div(100%, 3);
+
+        .button {
+          margin-left: 5px;
+        }
+      }
+    }
+    &.header {
+      .cell {
+        color: #ffffff;
+        border-color: $brand-color;
+        background-color: $brand-color;
+      }
+    }
+  }
+
+  .empty {
+    @include flex();
+
+    height: 40px;
+    padding: 0 15px;
+
+    color: #5c5c5c;
+    color: $forms-disabled-value-color;
+    border: 1px solid $forms-border-color;
+    border-top: none;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+}

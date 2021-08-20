@@ -1,0 +1,50 @@
+@use 'sass:math';
+
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+$column-offset: 25px;
+
+.formGrid {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.row {
+  @include flex(fs, fs);
+  flex-wrap: wrap;
+
+  margin: 0 (-$column-offset);
+
+  @each $name, $value in $breakpoints {
+    @for $i from 1 through 12 {
+      &.#{$name}#{$i} {
+        & > .column {
+          @media (min-width: $value) {
+            width: calc(#{math.div(100%, math.div(12, $i))} - #{$column-offset * 2});
+          }
+        }
+      }
+    }
+  }
+}
+
+.column {
+  width: 100%;
+  margin: 0 $column-offset;
+  margin-bottom: 10px;
+
+  text-align: left;
+
+  @each $name, $value in $breakpoints {
+    @for $i from 1 through 12 {
+      &.#{$name}#{$i} {
+        @media (min-width: $value) {
+          width: calc(#{math.div(100%, math.div(12, $i))} - #{$column-offset * 2});
+        }
+      }
+    }
+  }
+}

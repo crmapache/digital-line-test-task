@@ -1,0 +1,14 @@
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.wrapper {
+  display: flex;
+
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}

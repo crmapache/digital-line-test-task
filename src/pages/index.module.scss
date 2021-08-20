@@ -1,0 +1,16 @@
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.toggle {
+  @include elevation(5);
+
+  padding: 15px;
+
+  color: #ffffff;
+  border-radius: 4px;
+  background-color: #222222;
+
+  &.main {
+    background-color: #4caf50;
+  }
+}

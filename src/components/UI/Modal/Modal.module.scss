@@ -1,0 +1,53 @@
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.modal {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  overflow-y: auto;
+
+  padding: 30px;
+
+  transform-origin: 50% 50%;
+  text-align: center;
+
+  opacity: 0;
+  background-color: rgba(0, 0, 0, .6);
+
+  &:before {
+    display: inline-block;
+
+    height: 100%;
+
+    content: ' ';
+    vertical-align: middle;
+  }
+
+  .inner {
+    @include width(700px);
+    @include elevation(3);
+
+    position: static;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 100%;
+    margin: 20px auto;
+
+    transform: scale(.8);
+    transform-origin: 50% 50%;
+    vertical-align: middle;
+
+    opacity: 0;
+    border-radius: 4px;
+    background-color: #ffffff;
+
+    will-change: transform;
+  }
+}

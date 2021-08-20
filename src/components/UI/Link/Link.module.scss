@@ -1,0 +1,33 @@
+@import '@assets/scss/variables';
+@import '@assets/scss/mixins';
+
+.link {
+  font-size: inherit;
+  line-height: inherit;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    cursor: pointer;
+  }
+
+  .inline {
+    transition: color .2s;
+
+    border-bottom: 1px dashed currentColor;
+
+    &:hover {
+      color: $brand-color;
+    }
+
+    &:active {
+      color: $brand-color-hover;
+    }
+  }
+}
