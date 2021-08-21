@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     formStore.setFields({
       name: {
-        value: 'Max',
+        value: '',
         type: 'text',
         placeholder: 'Name',
         attributes: {
@@ -32,7 +32,7 @@ function App() {
         },
       },
       age: {
-        value: '31',
+        value: '',
         type: 'text',
         placeholder: 'Age',
         attributes: {
@@ -48,7 +48,7 @@ function App() {
         },
       },
       surname: {
-        value: 'Zolotoi',
+        value: '',
         type: 'text',
         placeholder: 'Surname',
         attributes: {
